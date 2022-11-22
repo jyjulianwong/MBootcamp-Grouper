@@ -1,0 +1,103 @@
+{
+    "groupCount": 2,
+    "people": [
+        {
+            "name": "Janice",
+            "voices": ["SOPRANO"],
+            "newMember": false
+        },
+        {
+            "name": "Stephanie",
+            "voices": ["SOPRANO"],
+            "newMember": true
+        },
+        {
+            "name": "Esther",
+            "voices": ["SOPRANO"],
+            "newMember": true
+        },
+        {
+            "name": "Jessie",
+            "voices": ["SOPRANO"],
+            "newMember": true
+        },
+        {
+            "name": "Megan",
+            "voices": ["ALTO"],
+            "newMember": true
+        },
+        {
+            "name": "Amy",
+            "voices": ["ALTO"],
+            "newMember": false
+        },
+        {
+            "name": "Priscilla",
+            "voices": ["ALTO"],
+            "newMember": false
+        },
+        {
+            "name": "Aaron",
+            "voices": ["TENOR"],
+            "newMember": false
+        },
+        {
+            "name": "Joseph",
+            "voices": ["TENOR"],
+            "newMember": false
+        },
+        {
+            "name": "Squiz",
+            "voices": ["BASS", "VP"],
+            "newMember": false
+        },
+        {
+            "name": "Cyrus",
+            "voices": ["BASS", "VP"],
+            "newMember": true
+        },
+        {
+            "name": "Adrian",
+            "voices": ["BASS", "VP"],
+            "newMember": true
+        }
+    ],
+    "constraints": [
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Janice", "Stephanie"]
+        },
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Amy", "Stephanie"]
+        },
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Esther", "Joseph"]
+        },
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Janice", "Megan"]
+        },
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Janice", "Squiz"]
+        },
+        {
+            "type": "DIFF_GROUP",
+            "args": ["Joseph", "Squiz"]
+        },
+        {
+            "type": "MIN_COUNT",
+            "args": ["NEW_MEMBER", 2]
+        },
+        {
+            "type": "MIN_COUNT",
+            "args": ["OLD_MEMBER", 1]
+        },
+        {
+            "type": "SAME_GROUP",
+            "args": ["Jessie", "Priscilla"]
+        }
+    ]
+}
