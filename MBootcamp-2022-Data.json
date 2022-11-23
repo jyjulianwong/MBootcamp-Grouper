@@ -64,6 +64,18 @@
     ],
     "constraints": [
         {
+            "type": "MIN_COUNT",
+            "args": ["NEW_MEMBER", 2]
+        },
+        {
+            "type": "MIN_COUNT",
+            "args": ["OLD_MEMBER", 1]
+        },
+        {
+            "type": "SAME_GROUP",
+            "args": ["Jessie", "Priscilla"]
+        },
+        {
             "type": "DIFF_GROUP",
             "args": ["Janice", "Stephanie"]
         },
@@ -86,18 +98,6 @@
         {
             "type": "DIFF_GROUP",
             "args": ["Joseph", "Squiz"]
-        },
-        {
-            "type": "MIN_COUNT",
-            "args": ["NEW_MEMBER", 2]
-        },
-        {
-            "type": "MIN_COUNT",
-            "args": ["OLD_MEMBER", 1]
-        },
-        {
-            "type": "SAME_GROUP",
-            "args": ["Jessie", "Priscilla"]
         }
     ]
 }
