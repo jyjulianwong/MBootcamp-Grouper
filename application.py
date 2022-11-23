@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from models.grouper import Grouper
 
 application = Flask(__name__)
+CORS(application)
 
 
 @application.route('/', methods=['GET'])
