@@ -9,8 +9,11 @@ class Grouper:
         if data:
             self.data = data
         else:
-            with open('MBootcamp-2022-Data.json') as sample_data:
-                self.data = json.load(sample_data)
+            try:
+                with open('MBootcamp-2022-Data.json') as sample_data:
+                    self.data = json.load(sample_data)
+            except:
+                pass
 
         self.group_count = 0
 
@@ -108,6 +111,9 @@ class Grouper:
         return True
 
     def get_groups(self) -> list[list[list[str]]]:
+        if self.data is None:
+            return []
+
         self.group_count = self.data['groupCount']
         print(f"Grouper: get_groups: group_count: {self.group_count}")
 
