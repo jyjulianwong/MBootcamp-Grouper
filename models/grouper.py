@@ -1,11 +1,11 @@
 import json
-from typing import Optional
+from typing import Dict, List, Optional, Tuple
 from itertools import combinations, permutations
 from models import consts
 
 
 class Grouper:
-    def __init__(self, data: Optional[dict] = None):
+    def __init__(self, data: Optional[Dict] = None):
         if data:
             self.data = data
         else:
@@ -29,7 +29,7 @@ class Grouper:
         self.same_group_violation_stat = 0
         self.diff_group_violation_stat = 0
 
-    def _get_perms(self, people: list[str], group_count: int) -> tuple:
+    def _get_perms(self, people: List[str], group_count: int) -> Tuple:
         min_per_group = len(people) // group_count
         print(f"Grouper: _get_perms: min_per_group: {min_per_group}")
         extra_count = len(people) % group_count
@@ -68,7 +68,7 @@ class Grouper:
         print(f"Grouper: _get_perms: len(perms_tuple): {len(perms_tuple)}")
         return perms_tuple
 
-    def _valid_combo(self, combo: dict[str, int]) -> bool:
+    def _valid_combo(self, combo: Dict[str, int]) -> bool:
         for constraint in self.data['constraints']:
             if constraint['type'] == consts.MIN_COUNT:
                 member_type = constraint['args'][0]
@@ -110,7 +110,7 @@ class Grouper:
 
         return True
 
-    def get_groups(self) -> list[list[list[str]]]:
+    def get_groups(self) -> List[List[List[str]]]:
         if self.data is None:
             return []
 
