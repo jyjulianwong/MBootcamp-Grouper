@@ -1,17 +1,17 @@
 from flask import Flask, jsonify, request
 from models.grouper import Grouper
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def root():
     gpr = Grouper()
     print(f"app: root: gpr.get_groups(): {gpr.get_groups()}")
     return ''
 
 
-@app.route('/grouper', methods=['POST'])
+@application.route('/grouper', methods=['POST'])
 def grouper():
     req_data = request.json
     gpr = Grouper(req_data)
@@ -21,4 +21,4 @@ def grouper():
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
