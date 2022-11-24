@@ -6,6 +6,7 @@ from models import consts
 
 class Grouper:
     def __init__(self, data: Optional[Dict] = None):
+        self.data = {}
         if data:
             self.data = data
         else:
@@ -110,9 +111,9 @@ class Grouper:
 
         return True
 
-    def get_groups(self) -> List[List[List[str]]]:
-        if self.data is None:
-            return []
+    def get_groups(self) -> Tuple[List[List[List[str]]], str]:
+        if self.data is None or len(self.data.items()) == 0:
+            return [], "No data was supplied."
 
         self.group_count = self.data['groupCount']
         print(f"Grouper: get_groups: group_count: {self.group_count}")
@@ -197,8 +198,9 @@ class Grouper:
             result.append(combo_groups)
             print("\n")
 
-        print(f"Grouper: get_groups: self.group_count: {self.group_count}")
-        print(f"Grouper: get_groups: len(combos): {len(combos)}")
-        print(f"Grouper: get_groups: len(valid_combos): {len(valid_combos)}")
+        statistics = ""
+        statistics += f"Grouper: get_groups: self.group_count: {self.group_count}"
+        statistics += f"Grouper: get_groups: Possible combinations: {len(combos)}"
+        statistics += f"Grouper: get_groups: Valid combinations: {len(valid_combos)}"
 
-        return result
+        return result, statistics

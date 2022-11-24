@@ -17,8 +17,8 @@ def root():
 def grouper():
     req_data = request.json
     gpr = Grouper(req_data)
-    combo_groups = gpr.get_groups()
-    res_data = {"combinations": combo_groups}
+    combo_groups, statistics = gpr.get_groups()
+    res_data = {"combinations": combo_groups, "statistics": statistics}
     return jsonify(res_data)
 
 
