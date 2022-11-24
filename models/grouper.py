@@ -199,8 +199,8 @@ class Grouper:
             print("\n")
 
         statistics = ""
-        statistics += f"Grouper: get_groups: self.group_count: {self.group_count}"
-        statistics += f"Grouper: get_groups: Possible combinations: {len(combos)}"
-        statistics += f"Grouper: get_groups: Valid combinations: {len(valid_combos)}"
+        statistics += f"Grouper: get_groups: self.group_count: {self.group_count}\n"
+        statistics += f"Grouper: get_groups: Possible combinations: {len(combos)}\n"
+        statistics += f"Grouper: get_groups: Valid combinations: {len(valid_combos)}\n"
 
         return result, statistics
