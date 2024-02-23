@@ -6,7 +6,7 @@ instance_class: F1
 # -w 2 sets the number of workers as 2 for compatibility with the F1 instance class.
 entrypoint: gunicorn -b :$PORT -w 2 application:application
 
-basic_scaling:
+automatic_scaling:
   max_instances: 1
 
 handlers:
